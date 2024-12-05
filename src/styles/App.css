@@ -1,0 +1,96 @@
+/* Global Styles */
+body {
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(to bottom, #1e3c72, #2a5298); /* Gradient océan */
+  color: white;
+}
+
+.app {
+  text-align: center;
+  padding: 50px;
+  min-height: 100vh;
+}
+
+.header {
+  margin-bottom: 40px;
+}
+
+.header h1 {
+  font-size: 2.5em;
+  margin-bottom: 10px;
+  color: #fffcf2; /* Légère couleur claire pour le titre */
+}
+
+.header p {
+  font-size: 1.2em;
+  color: #f0f0f0;
+}
+
+.body-parts {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+.body-part {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 15px;
+  padding: 20px;
+  width: 250px;
+  cursor: pointer;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.body-part:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+.details {
+  margin-top: 15px;
+  padding: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+.details p {
+  color: #f0f0f0;
+}
+
+.media-player {
+  margin-top: 40px;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 20px;
+  border-radius: 10px;
+  width: 80%;
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+audio,
+video {
+  width: 100%;
+  border-radius: 10px;
+}
+
+/* Ajouter des transitions pour les animations */
+body,
+h1,
+p {
+  transition: all 0.3s ease-in-out;
+}
+
+.body-part h2 {
+  color: #4bc1f0;
+  font-size: 1.5em;
+  transition: color 0.3s ease-in-out;
+}
+
+.body-part:hover h2 {
+  color: #ff7f50;  /* Une couleur chaude lors du survol */
+}
