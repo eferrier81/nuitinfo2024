@@ -1,16 +1,29 @@
 /* Global Styles */
 body {
-  font-family: 'Arial', sans-serif;
+  font-family: 'Roboto', sans-serif;
   margin: 0;
   padding: 0;
-  background: linear-gradient(to bottom, #1e3c72, #2a5298); /* Gradient océan */
-  color: white;
+  height: 100vh;
+  background: #1e3c72;
+  background: linear-gradient(to top, #1e3c72, #2a5298); /* Fond de base */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
 }
 
 .app {
   text-align: center;
-  padding: 50px;
-  min-height: 100vh;
+  padding: 20px;
+  background: rgba(0, 0, 0, 0.6);  /* Fond semi-transparent pour le contenu */
+  border-radius: 15px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+  width: 100%;
+  max-width: 1200px;
+  height: 90%;
+  overflow-y: auto;
+  position: relative;
+  z-index: 2; /* Assurer que le contenu est au-dessus du GIF */
 }
 
 .header {
@@ -18,9 +31,12 @@ body {
 }
 
 .header h1 {
-  font-size: 2.5em;
+  font-size: 3em;
   margin-bottom: 10px;
-  color: #fffcf2; /* Légère couleur claire pour le titre */
+  text-transform: uppercase;
+  color: #fff;
+  letter-spacing: 2px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
 }
 
 .header p {
@@ -36,61 +52,78 @@ body {
 }
 
 .body-part {
-  background-color: rgba(255, 255, 255, 0.1);
-  border-radius: 15px;
-  padding: 20px;
+  background-color: rgba(255, 255, 255, 0.15);
+  border-radius: 20px;
+  padding: 25px;
   width: 250px;
   cursor: pointer;
-  transition: transform 0.3s, box-shadow 0.3s;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out, background-color 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
 .body-part:hover {
   transform: translateY(-10px);
-  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.4);
+  background-color: rgba(0, 255, 255, 0.2);  /* Changement de couleur au survol */
+}
+
+.body-part h2 {
+  font-size: 1.5em;
+  color: #00bfff;  /* Bleu lumineux */
 }
 
 .details {
   margin-top: 15px;
   padding: 10px;
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.3);
   border-radius: 10px;
-  background-color: rgba(0, 0, 0, 0.2);
+  background-color: rgba(0, 0, 0, 0.4);
 }
 
 .details p {
+  font-size: 1em;
   color: #f0f0f0;
 }
 
 .media-player {
   margin-top: 40px;
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.15);
   padding: 20px;
-  border-radius: 10px;
+  border-radius: 15px;
   width: 80%;
   max-width: 500px;
   margin-left: auto;
   margin-right: auto;
+  text-align: center;
 }
 
-audio,
-video {
+audio, video {
   width: 100%;
   border-radius: 10px;
+  margin-top: 15px;
 }
 
-/* Ajouter des transitions pour les animations */
-body,
-h1,
-p {
-  transition: all 0.3s ease-in-out;
+/* Animation du header */
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
 }
 
-.body-part h2 {
-  color: #4bc1f0;
-  font-size: 1.5em;
-  transition: color 0.3s ease-in-out;
+.header h1, .header p {
+  animation: fadeIn 2s ease-in-out;
 }
 
-.body-part:hover h2 {
-  color: #ff7f50;  /* Une couleur chaude lors du survol */
+/* Utilisation du GIF pour le fond */
+body::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('https://i.pinimg.com/originals/85/0c/8f/850c8f7942cc8f658ba0d26f86e88027.gif') no-repeat center center fixed;
+  background-size: cover;
+  animation: waveAnimation 30s linear infinite;
+  z-index: 1;
+  opacity: 0.6;
 }
