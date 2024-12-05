@@ -12,6 +12,14 @@ function MediaPlayer() {
         <source src="Florian Sevellec - Oona Layolle-001-SD 480p.mov" type="video/mp4" />
         Votre navigateur ne supporte pas la vidéo.
       </video>
+      <video controls width="300">
+        <source src="Frederic Le Moigne - Part 1-SD 480p.mov" type="video/mp4" />
+        Votre navigateur ne supporte pas la vidéo.
+      </video>
+      <video controls width="300">
+        <source src="Frederic Le Moigne - Part 2-SD 480p.mov" type="video/mp4" />
+        Votre navigateur ne supporte pas la vidéo.
+      </video>
     </div>
   );
 }
