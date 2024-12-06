@@ -10,6 +10,10 @@ body {
   justify-content: center;
   align-items: center;
   overflow: hidden;
+  transform: scale(0.5); /* Dézoom à 50% */
+  transform-origin: top left; /* Point d'origine pour le zoom */
+  width: 200%; /* Compense le dézoom */
+  height: 200%; /* Compense le dézoom */
 }
 
 .app {
